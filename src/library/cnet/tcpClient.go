@@ -54,5 +54,3 @@ func (this *TTcpClient) Run(ctx *chelper.TContext) {
 func (this *TTcpClient) Connect() *TTcpConnect {
 	return this.conn
 }
-
-

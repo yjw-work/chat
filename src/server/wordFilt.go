@@ -53,7 +53,7 @@ func (this *TTrie) Filt(content string) string {
 	return content
 }
 
-func (this *TTrie) filtPart(part string) (int) {
+func (this *TTrie) filtPart(part string) int {
 	node := this.root
 	length := 0
 	for _, w := range part {
