@@ -7,6 +7,7 @@ const (
 
 type TTrieNode struct {
 	children map[rune]*TTrieNode
+	isWord   bool
 }
 
 func NewTrieNode() *TTrieNode {
@@ -35,6 +36,7 @@ func (this *TTrie) Insert(word string) {
 		}
 		node = node.children[w]
 	}
+	node.isWord = true
 }
 
 func (this *TTrie) Filt(content string) string {
@@ -69,7 +71,7 @@ func (this *TTrie) filtPart(part string) int {
 		}
 	}
 
-	if len(node.children) > 0 {
+	if len(node.children) > 0 && !node.isWord {
 		return 0
 	}
 

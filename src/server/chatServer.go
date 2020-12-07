@@ -210,7 +210,7 @@ func (this *TChatServer) send2Conn(conn *cnet.TTcpConnect, content string) {
 }
 
 func (this *TChatServer) onChat(conn *cnet.TTcpConnect, content string) {
-	//	content = this.trie.Filt(content)
+	content = this.trie.Filt(content)
 
 	this.recentLock.Lock()
 	this.recentChat.Push(&TChatRecord{
